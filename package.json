@@ -8,10 +8,17 @@
     "dev": "npm run build-css",
     "start": "http-server ./assets -p $PORT"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uideck/play-tailwind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.9",
-    "tailwindcss": "^3.3.5",
-    "http-server": "^14.1.1"
+    "tailwindcss": "^3.3.5"
   }
 }
