@@ -926,6 +926,10 @@ body {
   display: inline-block;
 }
 
+.inline{
+  display: inline;
+}
+
 .flex{
   display: flex;
 }
@@ -998,6 +1002,10 @@ body {
   height: 1px;
 }
 
+.h-12{
+  height: 3rem;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -1048,6 +1056,18 @@ body {
 
 .w-px{
   width: 1px;
+}
+
+.w-12{
+  width: 3rem;
+}
+
+.w-40{
+  width: 10rem;
+}
+
+.w-2{
+  width: 0.5rem;
 }
 
 .max-w-\[160px\]{
@@ -1132,6 +1152,18 @@ body {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-\[325px\]{
+  max-width: 325px;
+}
+
+.max-w-\[25px\]{
+  max-width: 25px;
+}
+
+.grow{
+  flex-grow: 1;
 }
 
 .-translate-y-1\/2{
@@ -1435,6 +1467,31 @@ body {
 
 .bg-white\/\[0\.12\]{
   background-color: rgb(255 255 255 / 0.12);
+}
+
+.bg-blue-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(18\2c 25\2c 39\)\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 25 39 / var(--tw-bg-opacity));
+}
+
+.bg-blue-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.bg-green-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-20{
@@ -2242,6 +2299,11 @@ body {
 .hover\:text-white:hover{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-black:hover{
+  --tw-text-opacity: 1;
+  color: rgb(33 43 54 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover{

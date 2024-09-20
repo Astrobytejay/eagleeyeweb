@@ -1,7 +1,17 @@
 (function () {
   "use strict";
 
-  // ======= Sticky
+  // Set initial logo when page loads
+  window.onload = function () {
+    const logoElement = document.querySelector(".header-logo");
+    if (logoElement) {
+      logoElement.src = "assets/images/eagleeye.png"; // Ensure initial logo is set
+      logoElement.style.width = "60px"; // Set initial size of logo
+      logoElement.style.height = "auto"; // Maintain aspect ratio
+    }
+  };
+
+  // ======= Sticky Header Logic
   window.onscroll = function () {
     const ud_header = document.querySelector(".ud-header");
     const sticky = ud_header.offsetTop;
@@ -13,28 +23,25 @@
       ud_header.classList.remove("sticky");
     }
 
-    if(logo.length) {
-      // === logo change
-      if (ud_header.classList.contains("sticky")) {
-        document.querySelector(".header-logo").src =
-          "assets/images/logo/logo.svg"
-      } else {
-        document.querySelector(".header-logo").src =
-          "assets/images/logo/logo-white.svg"
-      }
+    if (logo.length) {
+      // === Ensure the eagleeye.png logo persists
+      const logoElement = document.querySelector(".header-logo");
+      logoElement.src = "assets/images/eagleeye.png";
+      logoElement.style.width = "60px"; // Ensure correct width (px)
+      logoElement.style.height = "auto"; // Maintain aspect ratio
     }
 
     if (document.documentElement.classList.contains("dark")) {
-      if(logo.length) {
-        // === logo change
-        if (ud_header.classList.contains("sticky")) {
-          document.querySelector(".header-logo").src =
-            "assets/images/logo/logo-white.svg"
-        } 
+      if (logo.length) {
+        // === Dark mode logo handling
+        const logoElement = document.querySelector(".header-logo");
+        logoElement.src = "assets/images/eagleeye.png";
+        logoElement.style.width = "60px"; // Ensure correct units (px)
+        logoElement.style.height = "auto"; // Maintain aspect ratio
       }
     }
 
-    // show or hide the back-top-top button
+    // Show or hide the back-to-top button
     const backToTop = document.querySelector(".back-to-top");
     if (
       document.body.scrollTop > 50 ||
@@ -46,7 +53,7 @@
     }
   };
 
-  // ===== responsive navbar
+  // ===== Responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
   const navbarCollapse = document.querySelector("#navbarCollapse");
 
@@ -55,7 +62,7 @@
     navbarCollapse.classList.toggle("hidden");
   });
 
-  //===== close navbar-collapse when a  clicked
+  //===== Close navbar-collapse when a clicked
   document
     .querySelectorAll("#navbarCollapse ul li:not(.submenu-item) a")
     .forEach((e) =>
@@ -65,7 +72,7 @@
       })
     );
 
-  // ===== Sub-menu
+  // ===== Sub-menu toggle
   const submenuItems = document.querySelectorAll(".submenu-item");
   submenuItems.forEach((el) => {
     el.querySelector("a").addEventListener("click", () => {
@@ -73,7 +80,7 @@
     });
   });
 
-  // ===== Faq accordion
+  // ===== Faq accordion functionality
   const faqs = document.querySelectorAll(".single-faq");
   faqs.forEach((el) => {
     el.querySelector(".faq-btn").addEventListener("click", () => {
@@ -82,10 +89,10 @@
     });
   });
 
-  // ===== wow js
+  // ===== wow.js initialization for animations
   new WOW().init();
 
-  // ====== scroll top js
+  // ====== Scroll top js functionality
   function scrollTo(element, to = 0, duration = 500) {
     const start = element.scrollTop;
     const change = to - start;
@@ -118,14 +125,14 @@
     scrollTo(document.documentElement);
   };
 
-    /* ========  themeSwitcher start ========= */
+  /* ========  themeSwitcher start ========= */
 
-  // themeSwitcher
+  // themeSwitcher logic
   const themeSwitcher = document.getElementById('themeSwitcher');
 
   // Theme Vars
   const userTheme = localStorage.getItem('theme');
-  const systemTheme = window.matchMedia('(prefers-color0scheme: dark)').matches;
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   // Initial Theme Check
   const themeCheck = () => {
@@ -147,12 +154,12 @@
     localStorage.setItem('theme', 'dark');
   };
 
-  // call theme switch on clicking buttons
+  // Trigger theme switch on button click
   themeSwitcher.addEventListener('click', () => {
     themeSwitch();
   });
 
-  // invoke theme check on initial load
+  // Perform theme check on page load
   themeCheck();
   /* ========  themeSwitcher End ========= */
 })();
