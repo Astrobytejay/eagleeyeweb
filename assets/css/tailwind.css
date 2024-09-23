@@ -1006,6 +1006,10 @@ body {
   height: 3rem;
 }
 
+.h-auto{
+  height: auto;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -1072,6 +1076,10 @@ body {
 
 .w-\[60px\]{
   width: 60px;
+}
+
+.w-\[150px\]{
+  width: 150px;
 }
 
 .max-w-\[160px\]{
@@ -1219,6 +1227,10 @@ body {
   flex-wrap: wrap;
 }
 
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
 .items-end{
   align-items: flex-end;
 }
@@ -1281,6 +1293,10 @@ body {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-x-auto{
+  overflow-x: auto;
 }
 
 .scroll-smooth{
