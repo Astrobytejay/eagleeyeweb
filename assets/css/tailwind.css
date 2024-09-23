@@ -1070,6 +1070,10 @@ body {
   width: 0.5rem;
 }
 
+.w-\[60px\]{
+  width: 60px;
+}
+
 .max-w-\[160px\]{
   max-width: 160px;
 }
