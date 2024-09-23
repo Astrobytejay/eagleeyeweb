@@ -1082,6 +1082,10 @@ body {
   width: 150px;
 }
 
+.w-\[200px\]{
+  width: 200px;
+}
+
 .max-w-\[160px\]{
   max-width: 160px;
 }
