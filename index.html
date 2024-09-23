@@ -4366,236 +4366,241 @@ class="overflow-hidden bg-gray-1 pb-12 pt-20 dark:bg-dark-2 lg:pb-[90px] lg:pt-[
     </a>
    <!-- ====== Back To Top End -->
 
-    <!-- ====== Made With Button Start -->
-   
-    <!-- ====== Made With Button End -->
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top" style="position: fixed; bottom: 80px; right: 20px; background-color: #007bff; color: white; padding: 10px 15px; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center;">
+  ↑ Go to Top
+</a>
 
-    <!-- ====== All Scripts -->
+<!-- ====== Made With Button Start -->
+<!-- ====== Made With Button End -->
 
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      // ==== for menu scroll
-      const pageLink = document.querySelectorAll(".ud-menu-scroll");
+<!-- ====== All Scripts -->
 
-      pageLink.forEach((elem) => {
-        elem.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            offsetTop: 1 - 60,
-          });
-        });
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // ==== for menu scroll
+  const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+  pageLink.forEach((elem) => {
+    elem.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(elem.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+        offsetTop: 1 - 60,
       });
+    });
+  });
 
-      // section menu active
-      function onScroll(event) {
-        const sections = document.querySelectorAll(".ud-menu-scroll");
-        const scrollPos =
-          window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop;
+  // section menu active
+  function onScroll(event) {
+    const sections = document.querySelectorAll(".ud-menu-scroll");
+    const scrollPos =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
 
-        for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (
-            refElement.offsetTop <= scrollTopMinus &&
-            refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
-          ) {
-            document
-              .querySelector(".ud-menu-scroll")
-              .classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
+    for (let i = 0; i < sections.length; i++) {
+      const currLink = sections[i];
+      const val = currLink.getAttribute("href");
+      const refElement = document.querySelector(val);
+      const scrollTopMinus = scrollPos + 73;
+      if (
+        refElement.offsetTop <= scrollTopMinus &&
+        refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+      ) {
+        document
+          .querySelector(".ud-menu-scroll")
+          .classList.remove("active");
+        currLink.classList.add("active");
+      } else {
+        currLink.classList.remove("active");
       }
+    }
+  }
 
-      window.document.addEventListener("scroll", onScroll);
+  window.document.addEventListener("scroll", onScroll);
 
-      // Testimonial
-      const testimonialSwiper = new Swiper(".testimonial-carousel", {
-        slidesPerView: 1,
+  // Testimonial
+  const testimonialSwiper = new Swiper(".testimonial-carousel", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
         spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
 
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+<!-- Chatbot Integration Start -->
 
-        breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1280: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        },
-      });
-    </script>
-
-    <!-- Chatbot Integration Start -->
-
-    <!-- Chatbot HTML -->
-    <div id="chatbot-container">
-      <div class="chatbot-header">
-        <div class="chat-toggle">Chat</div>
-      </div>
-      <div class="chatbot-body" style="display: none;">
-        <div id="chatbox">
-          <div class="chatbot-messages"></div>
-        </div>
-        <div class="input-area">
-          <input type="text" class="chatbot-input" placeholder="Type your message..." />
-          <button class="chatbot-send">Send</button>
-        </div>
-      </div>
+<!-- Chatbot HTML -->
+<div id="chatbot-container">
+  <div class="chatbot-header">
+    <div class="chat-toggle">Chat with Us</div>
+  </div>
+  <div class="chatbot-body" style="display: none;">
+    <div id="chatbox">
+      <div class="chatbot-messages"></div>
     </div>
+    <div class="input-area">
+      <input type="text" class="chatbot-input" placeholder="Type your message..." />
+      <button class="chatbot-send">Send</button>
+    </div>
+  </div>
+</div>
 
-    <!-- Chatbot CSS -->
-    <style>
-      #chatbot-container {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 350px;
-        z-index: 1000;
+<!-- Chatbot CSS -->
+<style>
+  #chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 350px;
+    z-index: 1000;
+  }
+
+  .chatbot-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .chat-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .chatbot-body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  #chatbox {
+    flex: 1;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .chatbot-messages {
+    margin-bottom: 10px;
+  }
+
+  .input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+  .chatbot-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .chatbot-send {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+
+  .chatbot-send:hover {
+    background-color: #0056b3;
+  }
+
+  .message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .message.user {
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+  }
+
+  .message.bot {
+    background-color: #e0e0e0;
+    color: black;
+    text-align: left;
+  }
+</style>
+
+<!-- Chatbot JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const chatToggle = document.querySelector('.chat-toggle');
+    const chatBody = document.querySelector('.chatbot-body');
+    const sendBtn = document.querySelector('.chatbot-send');
+    const messageInput = document.querySelector('.chatbot-input');
+    const messageContainer = document.querySelector('.chatbot-messages');
+  
+    // Toggle Chat Body
+    chatToggle.addEventListener('click', function () {
+      chatBody.style.display = chatBody.style.display === 'none' ? 'block' : 'none';
+    });
+  
+    // Handle Sending Message
+    sendBtn.addEventListener('click', function () {
+      const message = messageInput.value.trim();
+      if (message) {
+        addMessage('user', message);
+        messageInput.value = '';
+        setTimeout(() => addMessage('bot', 'I will get back to you shortly.'), 1000);
       }
+    });
+  
+    // Function to add a message
+    function addMessage(sender, text) {
+      const message = document.createElement('div');
+      message.classList.add('message', sender);
+      message.innerText = text;
+      messageContainer.appendChild(message);
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+  });
+</script>
 
-      .chatbot-header {
-        text-align: center;
-        margin-bottom: 10px;
-      }
+<!-- Chatbot Integration End -->
 
-      .chat-toggle {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background-color: #007bff;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 18px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .chatbot-body {
-        display: flex;
-        flex-direction: column;
-        background-color: #f1f1f1;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      }
-
-      #chatbox {
-        flex: 1;
-        padding: 10px;
-        max-height: 300px;
-        overflow-y: auto;
-        border-bottom: 1px solid #ccc;
-      }
-
-      .chatbot-messages {
-        margin-bottom: 10px;
-      }
-
-      .input-area {
-        display: flex;
-        padding: 10px;
-        border-top: 1px solid #ccc;
-      }
-
-      .chatbot-input {
-        flex: 1;
-        padding: 10px;
-        border: none;
-        outline: none;
-        font-size: 16px;
-        border-radius: 5px;
-      }
-
-      .chatbot-send {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        margin-left: 10px;
-        border-radius: 5px;
-      }
-
-      .chatbot-send:hover {
-        background-color: #0056b3;
-      }
-
-      .message {
-        margin-bottom: 10px;
-        padding: 8px;
-        border-radius: 8px;
-      }
-
-      .message.user {
-        background-color: #007bff;
-        color: white;
-        text-align: right;
-      }
-
-      .message.bot {
-        background-color: #e0e0e0;
-        color: black;
-        text-align: left;
-      }
-    </style>
-
-    <!-- Chatbot JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const chatToggle = document.querySelector('.chat-toggle');
-        const chatBody = document.querySelector('.chatbot-body');
-        const sendBtn = document.querySelector('.chatbot-send');
-        const messageInput = document.querySelector('.chatbot-input');
-        const messageContainer = document.querySelector('.chatbot-messages');
-      
-        // Toggle Chat Body
-        chatToggle.addEventListener('click', function () {
-          chatBody.style.display = chatBody.style.display === 'none' ? 'block' : 'none';
-        });
-      
-        // Handle Sending Message
-        sendBtn.addEventListener('click', function () {
-          const message = messageInput.value.trim();
-          if (message) {
-            addMessage('user', message);
-            messageInput.value = '';
-            setTimeout(() => addMessage('bot', 'I will get back to you shortly.'), 1000);
-          }
-        });
-      
-        // Function to add a message
-        function addMessage(sender, text) {
-          const message = document.createElement('div');
-          message.classList.add('message', sender);
-          message.innerText = text;
-          messageContainer.appendChild(message);
-          messageContainer.scrollTop = messageContainer.scrollHeight;
-        }
-      });
-    </script>
-
-    <!-- Chatbot Integration End -->
-
-  </body>
+</body>
 </html>
