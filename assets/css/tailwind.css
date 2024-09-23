@@ -2012,6 +2012,10 @@ body {
   outline-offset: 2px;
 }
 
+.outline{
+  outline-style: solid;
+}
+
 .ring-primary{
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(55 88 249 / var(--tw-ring-opacity));
